@@ -1,0 +1,278 @@
+.artist-name {
+  font-weight: 600;
+  text-align: center;
+  margin: 10px;
+}
+
+.content.artists {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 25% 25% 25%;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  column-gap: 30px;
+}
+
+.artist-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.artist-img.akeos {
+  background-image: url("/artist-image-akeos.jpg");
+}
+
+.artist-img.neonix {
+  background-image: url("/artist-image-neonix.jpg");
+}
+
+.artist-img.syzy {
+  background-image: url("/artist-image-syzy.jpg");
+}
+
+.artist-img.rattrix {
+  background-image: url("/artist-image-rattrix.jpg");
+}
+
+.artist-img.trollphace {
+  background-image: url("/artist-image-trollphace.jpg");
+}
+
+.artist-img {
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+a.artist-img-link {
+  opacity: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a.artist-img-link.show-logo {
+  opacity: 0.7;
+}
+
+a.artist-img-link:hover {
+  opacity: 0.7;
+}
+
+a.artist-img-link.akeos {
+  background-image: url("/akeos-logo.png");
+  background-size: 80%;
+  background-position: center 25px;
+}
+
+a.artist-img-link.neonix {
+  background-image: url("/neonix-logo.png");
+  mix-blend-mode: multiply;
+  background-size: 100%;
+  background-position: center -20px;
+}
+
+a.artist-img-link.neonix.show-logo {
+  opacity: 0.8;
+}
+
+a.artist-img-link.neonix:hover {
+  opacity: 0.8;
+}
+
+a.artist-img-link.syzy {
+  background-image: url("/syzy-logo.png");
+  background-size: 130%;
+}
+
+a.artist-img-link.syzy.show-logo {
+  opacity: 0.8;
+}
+
+a.artist-img-link.rattrix {
+  background-image: url("/rattrix-logo.png");
+  background-size: 65%;
+  mix-blend-mode: multiply;
+  filter: invert(1);
+}
+
+a.artist-img-link.rattrix:hover {
+  opacity: 0.8;
+}
+
+a.artist-img-link.trollphace {
+  background-image: url("/trollphace-logo.png");
+  background-size: 75%;
+  background-position: center 100px;
+  mix-blend-mode: multiply;
+}
+
+a.artist-img-link.trollphace.show-logo {
+  opacity: 0.86;
+}
+
+a.artist-img-link.trollphace:hover {
+  opacity: 0.86;
+}
+
+@media (max-width: 1790px) {
+  .content.artist { grid-template-columns: 35% 35%; }
+}
+
+@media (max-width: 1252px) {
+  .content.artists { grid-template-columns: 100%; }
+}
+
+.content.artist-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 500;
+}
+
+.artist-page-main-contain {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 480px 40px 33.3%;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.artist-page-img {
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.artist-page-img > video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  left: -50%;
+}
+
+.hr {
+  width: 1px;
+  height: 400px;
+  background-color: #aaa;
+  justify-self: left;
+}
+
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.artist-info-music {
+  width: 100%;
+}
+
+.spotify-artist-social:hover {
+  fill: #1db954;
+}
+
+.soundcloud-artist-social:hover {
+  fill: #fe5000;
+}
+
+.instagram-path {
+  fill: url("#instagram");
+}
+
+.instagram-path-colored {
+  fill: url("#instagram-color");
+}
+
+.instagram-path-hover {
+  z-index: 1;
+  transition: z-index 0s;
+}
+
+.instagram-path-hover {
+  z-index: -5;
+}
+
+.instagram-path-hover ~ .instagram-path {
+  transition: opacity 0.5s;
+}
+
+.instagram-path-hover:hover ~ .instagram-path {
+  z-index: 1;
+  opacity: 0;
+}
+
+.twitter-artist-social:hover {
+  fill: #1da1f2;
+}
+
+.facebook-artist-social:hover {
+  fill: #3b5998;
+}
+
+.artist-social {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  cursor: pointer;
+  fill: #555;
+  transition: fill 0.5s;
+}
+
+.artist-info-socials {
+  height: 100px;
+  display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  place-content: space-between;
+}
+
+.artist-header {
+  text-align: center;
+  font-size: 150%;
+  padding-bottom:20px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 950px) {
+  .artist-page-main-contain { grid-template-columns: 100%; row-gap: 30px; margin-top: 30px;}
+  .hr { width: 100%; height: 1px; margin: 0 auto; }
+  .hidden { display: block; }
+  .artist-info { display: grid; row-gap: 30px; }
+  .artist-page-img { width: 100%; }
+  .artist-info-socials { height: auto; }
+  a.artist-img-link.akeos { background-position: center; }
+  a.artist-img-link.neonix { background-position: center; }
+  a.artist-img-link.syzy { background-position: center; }
+  a.artist-img-link.ratrix { background-position: center; }
+  a.artist-img-link.trollphace { background-position: center; }
+}

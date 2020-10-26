@@ -1,0 +1,9 @@
+.content.about {
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 17px;
+  text-align: center;
+  line-height: 1.8;
+  max-width: 700px;
+  height: 100%;
+  flex-grow: 500;
+}

@@ -1,0 +1,8 @@
+@font-face {
+  font-family: LOGOFONT;
+  src: url("/CODEC.ttf");
+}
+
+canvas {
+  font-family: LOGOFONT, sans-serif;
+}

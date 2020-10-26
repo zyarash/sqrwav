@@ -1,0 +1,86 @@
+.content.contact {
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 800px;
+    height: 100%;
+    flex-grow: 500;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    max-width: 500px;
+}
+
+input, textarea {
+    background: #fafafa;
+    border: 1px solid #eee;
+    color: #555;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid #bbb;
+    outline: none;
+}
+
+input, textarea {
+    width: 100%;
+}
+
+input {
+    height: 30px;
+}
+
+input {
+    height: 30px;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+input[type=submit] {
+    width: 50%;
+}
+
+input[type=submit]:disabled {
+    color: #bbb;
+}
+
+label {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 20px;
+}
+
+label > p {
+    align-self: flex-start;
+}
+
+p.error {
+    color: #f75151;
+}
+
+input.error, textarea.error {
+    border: 1px solid #f75151;
+    margin: 10px 0px;
+}
+
+.error-msg {
+    color: #fff;
+    font-size: 11px;
+    background: #f75151;
+    border-radius: 1px;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.master.error-msg {
+    margin-bottom: 30px;
+}
