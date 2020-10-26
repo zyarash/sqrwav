@@ -39,8 +39,8 @@ app.post("/contact", [
     `;
 
     let emailDetail = {
-      from: "hi.imma.bear@gmail.com",
-      to: "hi.imma.bear@gmail.com",
+      from: "web@sqrwavmgmt.com",
+      to: "keith@sqrwavmgmt.com",
       subject: request.body.subject,
       text: message,
     }
@@ -48,8 +48,8 @@ app.post("/contact", [
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "hi.imma.bear@gmail.com",
-        pass: "cfqt tsio gpuc anrs"
+        user: "web@sqrwavmgmt.com",
+        pass: "iuoh polm oyta rxfv",
       },
     });
 
