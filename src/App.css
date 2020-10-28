@@ -64,9 +64,8 @@ footer {
   color: #999;
   font-size: 12px;
   text-align: center;
-  margin: 10px;
-  bottom: 0;
-  margin-bottom: 20px;
+  flex: 0 0 auto;
+  margin: 10px 0 20px 0;
 }
 
 header {
@@ -74,24 +73,23 @@ header {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
+    flex: 1 1 auto;
     margin-bottom: 20px;
+    animation: fade-in 1s ease-in forwards;
 }
 
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  min-height: 100%;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    align-items: center;
 }
 
 .content {
-  display: flex;
-  width: 100%;
   justify-content: center;
   align-items: center;
-  position: relative;
+  height: inherit;
+  width: 100%;
 }
 
 .social-media-bar {
@@ -99,34 +97,125 @@ header {
 }
 
 .social-media-icon {
-  opacity: 0.5;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 10px;
-  image-rendering: -webkit-optimize-contrast;
-  transition: opacity 0.5s;
-  cursor: pointer;
+    opacity: 0.5;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    image-rendering: -webkit-optimize-contrast;
+    transition: opacity 0.5s;
+    cursor: pointer;
 }
 
 .social-media-icon:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .twitter {
-  background-image: url("/twitter.png");
+    background-image: url("/twitter.png");
 }
 
 .instagram {
-  background-image: url("/instagram.png");
+    background-image: url("/instagram.png");
 }
 
 .facebook {
-  background-image: url("/facebook.png");
+    background-image: url("/facebook.png");
 }
 
 .soundcloud {
-  background-image: url("/soundcloud.png");
+    background-image: url("/soundcloud.png");
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.content-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.fade-enter {
+    opacity: 0;
+    height: 0;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    height: inherit;
+    transition: opacity 1s, height 1s;
+}
+
+.fade-enter-done {
+    height: inherit;
+}
+
+.fade-exit {
+    opacity: 1;
+    height: inherit;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    height: 0;
+    transition: opacity 1s, height 1s;
+}
+
+.fade-exit-done {
+    height: 0;
+}
+
+
+.content-container.home {
+    height: 0;
+}
+
+@media (max-width: 950px) {
+    .fade-enter-done.artists {
+        height: fit-content;
+    }
+    .fade-enter-done.artist {
+        height: fit-content;
+    }
+
+}
+
+.content.about {
+    height: auto;
+}
+
+.artist.fade-enter {
+    opacity: 0;
+    height: 0;
+}
+
+.artist.fade-enter.fade-enter-active {
+    opacity: 1;
+    height: fit-content;
+    transition: opacity 1s, height 1s;
+}
+
+.artist.fade-enter-done {
+    height: fit-content;
+}
+
+.auto.fade-exit {
+    opacity: 1;
+    height: auto;
+}
+
+.auto.fade-exit.fade-exit-active {
+    opacity: 0;
+    height: 0;
+    transition: opacity 1s, height 1s;
+}
+
+.fade-exit-done {
+    height: 0;
 }

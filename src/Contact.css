@@ -4,11 +4,8 @@
     text-align: center;
     line-height: 1.8;
     max-width: 800px;
-    height: 100%;
-    flex-grow: 500;
     display: flex;
     flex-flow: column;
-    justify-content: space-evenly;
     max-width: 500px;
 }
 
@@ -33,10 +30,6 @@ input {
     height: 30px;
 }
 
-input {
-    height: 30px;
-}
-
 textarea {
     height: 200px;
     resize: none;
@@ -54,7 +47,8 @@ label {
     width: 100%;
     display: flex;
     flex-flow: column;
-    margin-bottom: 20px;
+    height: auto;
+    margin: 20px 0 40px 0;
 }
 
 label > p {

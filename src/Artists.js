@@ -140,7 +140,7 @@ class Artists extends Component {
     )
   }
 
-  componentWillUnmount() {
+  async componentWillUnmount() {
     if (this.scrollListener) {
       window.removeEventListener(this.scrollListener);
     }

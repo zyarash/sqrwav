@@ -18,7 +18,8 @@ class BaseFormInput extends Component {
     if (!errors) { return null; }
     let n = this.props.name;
     let e = errors.map(function(e) {
-      if (e.param == n) { return e; }
+      if (e.param === n) { return e; }
+      return undefined;
     }).filter(Boolean);
     return (e.length > 0 ? e : null);
   }
@@ -96,7 +97,7 @@ class Contact extends Component {
     await delay(1000);
 
     const response = await fetch("/contact", request);
-    if (response.status == 200) {
+    if (response.status === 200) {
       this.refs.submit.value = "THANK YOU!";
       this.refs.submit.disabled = true;
     }

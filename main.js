@@ -1,6 +1,8 @@
-const express = require("express")
-const nodemailer = require("nodemailer")
-const path = require("path")
+const GSUITE = require("./gSuiteAuth.json");
+
+const express = require("express");
+const nodemailer = require("nodemailer");
+const path = require("path");
 
 const { check, validationResult } = require("express-validator");
 
@@ -41,6 +43,7 @@ app.post("/contact", [
     let emailDetail = {
       from: "web@sqrwavmgmt.com",
       to: "keith@sqrwavmgmt.com",
+      cc: "web@sqrwavmgmt.com",
       subject: request.body.subject,
       text: message,
     }
@@ -48,8 +51,10 @@ app.post("/contact", [
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
+        type: "OAuth2",
         user: "web@sqrwavmgmt.com",
-        pass: "iuoh polm oyta rxfv",
+        serviceClient: GSUITE.client_id,
+        privateKey: GSUITE.private_key,
       },
     });
 
