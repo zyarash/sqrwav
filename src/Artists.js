@@ -95,7 +95,6 @@ class ArtistBox extends Component {
 
     return (
       <div className="artist-box">
-        <p className="artist-name">{name}</p>
         <div className={cn}><Link className={logo} to={link}/></div>
       </div>
     )

@@ -189,33 +189,3 @@ header {
 .content.about {
     height: auto;
 }
-
-.artist.fade-enter {
-    opacity: 0;
-    height: 0;
-}
-
-.artist.fade-enter.fade-enter-active {
-    opacity: 1;
-    height: fit-content;
-    transition: opacity 1s, height 1s;
-}
-
-.artist.fade-enter-done {
-    height: fit-content;
-}
-
-.auto.fade-exit {
-    opacity: 1;
-    height: auto;
-}
-
-.auto.fade-exit.fade-exit-active {
-    opacity: 0;
-    height: 0;
-    transition: opacity 1s, height 1s;
-}
-
-.fade-exit-done {
-    height: 0;
-}

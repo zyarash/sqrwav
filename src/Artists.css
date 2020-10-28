@@ -11,7 +11,7 @@
   align-items: center;
   row-gap: 20px;
   column-gap: 30px;
-  height: auto;
+  padding: 20px;
 }
 
 .artist-box {
@@ -23,22 +23,27 @@
 
 .artist-img.akeos {
   background-image: url("/artist-image-akeos.jpg");
+  animation: fade-in 500ms ease-in 500ms forwards;
 }
 
 .artist-img.neonix {
   background-image: url("/artist-image-neonix.jpg");
+  animation: fade-in 500ms ease-in 900ms forwards;
 }
 
 .artist-img.syzy {
   background-image: url("/artist-image-syzy.jpg");
+  animation: fade-in 500ms ease-in 1300ms forwards;
 }
 
 .artist-img.rattrix {
   background-image: url("/artist-image-rattrix.jpg");
+  animation: fade-in 500ms ease-in 1700ms forwards;
 }
 
 .artist-img.trollphace {
   background-image: url("/artist-image-trollphace.jpg");
+  animation: fade-in 500ms ease-in 2100ms forwards;
 }
 
 .artist-img {
@@ -48,6 +53,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
+  opacity: 0;
+  transform: scale(1);
+  transition: transform 300ms;
+}
+
+.artist-img:hover {
+    transform: scale(0.95);
+    transition: transform 300ms;
 }
 
 a.artist-img-link {
