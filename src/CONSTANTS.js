@@ -36,29 +36,6 @@ const LINKS = {
     }
 }
 
-const SCROLL_OFFSETS = {
-    "akeos": {
-      "min": 10,
-      "max": 350
-    },
-    "neonix": {
-      "min": 340,
-      "max": 730
-    },
-    "syzy": {
-      "min": 720,
-      "max": 1050
-    },
-    "rattrix": {
-      "min": 1040,
-      "max": 1300
-    },
-    "trollphace": {
-      "min": 1300,
-      "max": 2000
-    }
-}
-
 const MUSIC = {
     "akeos": "https://soundcloud.com/akeos/dermacrush",
     "neonix": "https://soundcloud.com/bassrush/neonix-dead-face",
@@ -114,4 +91,4 @@ const MEDIA = {
 
 const ARTISTS = Object.keys(LINKS); 
 
-export { ARTISTS, LINKS, MEDIA, MEDIA_TYPE, MUSIC, SCROLL_OFFSETS }
+export { ARTISTS, LINKS, MEDIA, MEDIA_TYPE, MUSIC }

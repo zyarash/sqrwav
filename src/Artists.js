@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ARTISTS, LINKS, MEDIA, MEDIA_TYPE, MUSIC, SCROLL_OFFSETS } from "./CONSTANTS.js";
+import { ARTISTS, LINKS, MEDIA, MEDIA_TYPE, MUSIC } from "./CONSTANTS.js";
 import { isMobileDevice } from "./HELPERS.js";
 
 import {
@@ -91,7 +91,6 @@ class ArtistBox extends Component {
     let cn = `artist-img ${this.props.artistName}`;
     let link = `/artists/${this.props.artistName}`;
     let logo = `artist-img-link ${this.props.artistName}`;
-    let name = this.props.artistName.charAt(0).toUpperCase() + this.props.artistName.slice(1);
 
     return (
       <div className="artist-box">
@@ -102,16 +101,21 @@ class ArtistBox extends Component {
 }
 
 class Artists extends Component {
-  handleLogoFade(name, start, end) {
+  handleLogoFade(name) {
     let logo = document.getElementsByClassName(`artist-img-link ${name}`)[0];
-    let offset = window.pageYOffset;
-    if (logo) {
-      if (offset > start && offset < end) {
-         logo.classList = `artist-img-link ${name} show-logo`
-      }
-      else {
-         logo.classList = `artist-img-link ${name}`
-      }
+    if (!logo) { return; }
+
+    let rect = logo.getBoundingClientRect();
+    let page = document.getElementById("root").getBoundingClientRect();
+
+    let pageCenter = (-1 * page.y) + (window.innerHeight / 2);
+    let rectCenter = (rect.y) + (rect.height / 2) + (-1 * page.y);
+
+    if (pageCenter >= rectCenter - 200 && pageCenter <= rectCenter + 240) {
+        logo.classList = `artist-img-link ${name} show-logo`;
+    }
+    else {
+        logo.classList = `artist-img-link ${name}`
     }
   }
 
@@ -121,7 +125,7 @@ class Artists extends Component {
     if (isMobileDevice()) {
       this.scrollListener = window.addEventListener("scroll", () => {
         for (const artist of ARTISTS) {
-          this.handleLogoFade(artist, SCROLL_OFFSETS[artist]["min"], SCROLL_OFFSETS[artist]["max"]);
+          this.handleLogoFade(artist);
         }
       });
     }

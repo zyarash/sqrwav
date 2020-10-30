@@ -24,8 +24,7 @@ import './App.css';
 class App extends Component {
   constructor(props) { 
     super(props);
-    this.state = { previous: window.location.pathname };
-    this.getClassName = this.getClassName.bind(this);
+    this.getPageClassName = this.getPageClassName.bind(this);
   }
 
   componentDidMount() {
@@ -42,27 +41,14 @@ class App extends Component {
     soundcloud.onclick = () => { window.open("https://soundcloud.com/sqrwavmgmt"); };
   }
 
-  getClassName() {
-      console.log(`previous: ${this.state.previous}`);
-      console.log(`pathname: ${window.location.pathname}`);
-
-      let classes = ['content-container'];
-      if (window.location.pathname === "/") {
-          classes.push("home");
-      }
-      if (window.location.pathname === "/about") {
-          classes.push("about");
-      }
-      if (window.location.pathname === "/artists") {
-          classes.push("artists");
-      }
+  getPageClassName() {
       if (window.location.pathname.match(/\/artists\/[a-z]+/)) {
-          classes.push("artist");
+          return "artist";
       }
-      if (window.location.pathname === "/contact") {
-          classes.push("contact");
+      else if (window.location.pathname.slice(1) === "") {
+          return "home";
       }
-      return classes.join(' ');
+      return window.location.pathname.slice(1);
   }
 
   render() {
@@ -77,20 +63,20 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-        <Route render={({ location, history }) => (
+        <Route render={({ location }) => (
           <React.Fragment>
-            <header>
-              <Logo/>
-              <nav className="home">
-                <NavLink className="home" exact to="/">HOME</NavLink>
-                <NavLink className="artists" to="/artists">ARTISTS</NavLink>
-                <NavLink className="about" to="/about">ABOUT</NavLink>
-                <NavLink className="contact" to="/contact">CONTACT</NavLink>
-              </nav>
-            </header>
+                    <header>
+                      <Logo/>
+                      <nav className="home">
+                        <NavLink className="home" exact to="/">HOME</NavLink>
+                        <NavLink className="artists" to="/artists">ARTISTS</NavLink>
+                        <NavLink className="about" to="/about">ABOUT</NavLink>
+                        <NavLink className="contact" to="/contact">CONTACT</NavLink>
+                      </nav>
+                    </header>
             <SwitchTransition mode="out-in">
-              <CSSTransition key={location.key} timeout={1000} classNames="fade">
-                <div className={ this.getClassName() }>
+              <CSSTransition key={location.pathname} timeout={1000} classNames="fade">
+                <div className={ "content-container " + this.getPageClassName() }>
                 <Switch location={location}>
                   <Route exact path="/" component={Home}/>
                   <Route exact path="/artists" component={Artists}/>

@@ -47,7 +47,6 @@ label {
     width: 100%;
     display: flex;
     flex-flow: column;
-    height: auto;
     margin: 20px 0 40px 0;
 }
 
