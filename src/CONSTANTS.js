@@ -50,10 +50,8 @@ const MEDIA_TYPE =  {
     IMAGE: 2,
 }
 
-function Source(src, start, end) {
+function Source(src) {
     this.src = src;
-    this.start = start;
-    this.end = end;
 }
 
 const MEDIA = {
@@ -78,13 +76,13 @@ const MEDIA = {
     "syzy": {
         type: MEDIA_TYPE.IMAGE,
         sources: [
-            new Source("/MEDIA/syzy1.jpg", null, null),
+            new Source("/MEDIA/syzy1.jpg"),
         ],
     },
     "trollphace": {
         type: MEDIA_TYPE.IMAGE,
         sources: [
-            new Source("/MEDIA/trollphace1.png", null, null),
+            new Source("/MEDIA/trollphace1.png"),
         ],
     },
 } 
