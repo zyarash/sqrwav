@@ -60,13 +60,13 @@ const MEDIA = {
     "akeos": {
         type: MEDIA_TYPE.VIDEO,
         sources: [
-            new Source("/MEDIA/akeos1.mp4", 21, 25),
+            new Source("/MEDIA/akeos1.mp4"),
         ]
     },
     "neonix": {
         type: MEDIA_TYPE.VIDEO,
         sources: [
-            new Source("/MEDIA/neonix1.mp4", 9, 17),
+            new Source("/MEDIA/neonix1.mp4"),
         ],
     },
     "rattrix": {
