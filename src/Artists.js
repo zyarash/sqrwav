@@ -23,24 +23,11 @@ class ArtistPage extends Component {
     "facebook": FacebookSVG
   };
 
-  componentDidMount() {
-    if (MEDIA[this.props.artistName].type === MEDIA_TYPE.VIDEO) {
-        let video = document.getElementsByTagName("video")[0];
-        let source = MEDIA[this.props.artistName].sources[0];
-        video.currentTime = source.start;
-        video.ontimeupdate = function() {
-            if (this.currentTime >= source.end) {
-                video.currentTime = source.start;
-            }
-        };
-    }
-  }
-
   render() {
     let media = null;
     let source = MEDIA[this.props.artistName].sources[0];
     if (MEDIA[this.props.artistName].type === MEDIA_TYPE.VIDEO) {
-        media =  (
+        media = (
             <div className="artist-page-img">
                 <video key={source.src} muted autoPlay loop>
                   <source src={source.src} type="video/mp4"/>
@@ -104,12 +91,14 @@ class ArtistBox extends Component {
     let cn = `artist-img ${this.props.artistName}`;
     let link = `/artists/${this.props.artistName}`;
     let logo = `artist-img-link ${this.props.artistName}`;
+    let nb = `artist-name-animate ${this.props.artistName}`;
     let n = `artist-name ${this.props.artistName}`;
 
     if (this.state.hover) {
         cn = cn + " hover";
         logo = logo + " hover";
         n = n + " hover";
+        nb = nb + " hover";
     }
 
     return (
@@ -119,11 +108,11 @@ class ArtistBox extends Component {
             onMouseEnter={this.mouseEnter}
             onMouseLeave={this.mouseLeave}
         >
-            <div className={cn}>
+            <div className={cn}/>
+            <Link className={logo} to={link}/>
+            <div className={nb}>
                 <div className={n}>{this.props.artistName.toUpperCase()}</div>
             </div>
-
-            <Link className={logo} to={link}/>
         </div>
       </div>
     )

@@ -72,7 +72,7 @@ const MEDIA = {
     "rattrix": {
         type: MEDIA_TYPE.VIDEO,
         sources: [
-            new Source("/MEDIA/rattrix1.mp4", 9, 17),
+            new Source("/MEDIA/rattrix1.mp4"),
         ],
     },
     "syzy": {

@@ -1,5 +1,9 @@
+@font-face {
+  font-family: PROXIMANOVA;
+  src: url("/ProximaNova-Regular-otf");
+}
+
 .content.contact {
-    font-family: 'Source Code Pro', sans-serif;
     font-size: 14px;
     text-align: center;
     line-height: 1.8;
@@ -48,6 +52,7 @@ label {
     display: flex;
     flex-flow: column;
     margin: 20px 0 40px 0;
+    font-family: PROXIMANOVA, monospace;
 }
 
 label > p {

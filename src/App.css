@@ -1,9 +1,14 @@
+@font-face {
+  font-family: PROXIMANOVA;
+  src: url("/ProximaNova-Regular.otf");
+}
+
 * {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: 'Source Code Pro', sans-serif;
+  font-family: "PROXIMANOVA", monospace;
 }
 
 html {
@@ -31,6 +36,8 @@ nav > a {
   padding: 10px 0px;
   background: #eee;
   user-select: none;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 nav > a:hover {
@@ -99,13 +106,13 @@ header {
     background-repeat: no-repeat;
     margin: 10px;
     image-rendering: -webkit-optimize-contrast;
-    transition: opacity 0.5s, transform 0.5s;
+    transition: opacity 300ms, transform 300ms;
     cursor: pointer;
 }
 
 .social-media-icon:hover {
     opacity: 0.8;
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
 .twitter {

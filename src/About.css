@@ -1,6 +1,5 @@
 .content.about {
-  font-family: 'Source Code Pro', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
   line-height: 1.8;
   max-width: 700px;
@@ -8,5 +7,5 @@
 }
 
 @media (max-width: 950px) {
-    .content.about { font-size: 14px; }
+    .content.about { font-size: 18px; }
 }

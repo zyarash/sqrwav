@@ -18,6 +18,17 @@
     height: 0;
 }
 
+.artist-name-animate {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 300ms;
+}
+
+.artist-name-animate.hover {
+    transform: scale(0.95);
+}
+
 .content.artists {
   display: grid;
   width: 100%;
@@ -51,7 +62,7 @@
 }
 
 .artist-box.neonix {
-  animation: fade-in 1000ms ease-in 500ms forwards;
+  animation: fade-in 1000ms ease-in 400ms forwards;
 }
 
 .artist-img.neonix {
@@ -59,7 +70,7 @@
 }
 
 .artist-box.syzy {
-  animation: fade-in 1000ms ease-in 1500ms forwards;
+  animation: fade-in 1000ms ease-in 1200ms forwards;
 }
 
 .artist-img.syzy {
@@ -67,7 +78,7 @@
 }
 
 .artist-box.rattrix {
-  animation: fade-in 1000ms ease-in 1000ms forwards;
+  animation: fade-in 1000ms ease-in 800ms forwards;
 }
 
 .artist-img.rattrix {
@@ -75,7 +86,7 @@
 }
 
 .artist-box.trollphace {
-  animation: fade-in 1000ms ease-in 2000ms forwards;
+  animation: fade-in 1000ms ease-in 1600ms forwards;
 }
 
 .artist-img.trollphace {
@@ -103,6 +114,8 @@ a.artist-img-link {
   background-repeat: no-repeat;
   transition: transform 300ms, opacity 1000ms;
   opacity: 0;
+  z-index: 2;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a.artist-img-link.akeos {
@@ -237,8 +250,8 @@ a.artist-img-link.trollphace {
 }
 
 .artist-social {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   margin: 0 auto;
   cursor: pointer;
   fill: #555;
@@ -266,7 +279,8 @@ a.artist-img-link.trollphace {
 }
 
 .logo {
-    width: 430px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 950px) {
@@ -277,7 +291,9 @@ a.artist-img-link.trollphace {
 a.artist-img-link.hover { transform: scale(0.85); opacity: 0.78; }
 
 
+
 @media (max-width: 950px) {
+  .artist-social { width: 60px; height: 60px }
   .artist-page-main-contain { grid-template-columns: 100%; row-gap: 30px; }
   .hr { width: 100%; height: 1px; margin: 0 auto; }
   .hidden { display: block; }
@@ -289,4 +305,8 @@ a.artist-img-link.hover { transform: scale(0.85); opacity: 0.78; }
   a.artist-img-link.syzy { background-position: center; }
   a.artist-img-link.ratrix { background-position: center; }
   a.artist-img-link.trollphace { background-position: center; }
+  .artist-name { opacity: 0; height: 0; transition: opacity 300ms, height 300ms; }
+  .artist-name.hover { opacity: 1; height: 45px; }
+  .artist-name-animate { transition: none; }
+  .artist-name-animate.hover { transform: scale(1); }
 }
