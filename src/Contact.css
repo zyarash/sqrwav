@@ -82,3 +82,7 @@ input.error, textarea.error {
 .master.error-msg {
     margin-bottom: 30px;
 }
+
+@media (max-width: 950px) {
+    .content.contact { height: 100%; }
+}
