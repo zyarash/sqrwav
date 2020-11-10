@@ -279,7 +279,7 @@ a.artist-img-link.trollphace {
 }
 
 .logo {
-    width: 100%;
+    width: 40%;
     margin-bottom: 20px;
 }
 
@@ -309,4 +309,5 @@ a.artist-img-link.hover { transform: scale(0.85); opacity: 0.78; }
   .artist-name.hover { opacity: 1; height: 45px; }
   .artist-name-animate { transition: none; }
   .artist-name-animate.hover { transform: scale(1); }
+  .logo { width: 100% }
 }
