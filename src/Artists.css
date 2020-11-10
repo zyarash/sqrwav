@@ -1,6 +1,21 @@
 .artist-name {
+  position: absolute;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
   text-align: center;
+  color: #fff;
+  background: rgba(0,0,0, 0.5);
+  width: 140px;
+  height: 45px;
+  bottom: 0;
+  transition: opacity 300ms, height 300ms;
+}
+
+.artist-name.hover {
+    opacity: 0;
+    height: 0;
 }
 
 .content.artists {
@@ -14,35 +29,57 @@
 }
 
 .artist-box {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  opacity: 0;
 }
 
+.artist-box-animate {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.artist-box.akeos {
+  animation: fade-in 1000ms ease-in 0ms forwards;
+}
 .artist-img.akeos {
   background-image: url("/artist-image-akeos.jpg");
-  animation: fade-in 1000ms ease-in 0ms forwards;
+}
+
+.artist-box.neonix {
+  animation: fade-in 1000ms ease-in 500ms forwards;
 }
 
 .artist-img.neonix {
   background-image: url("/artist-image-neonix.jpg");
-  animation: fade-in 1000ms ease-in 500ms forwards;
+}
+
+.artist-box.syzy {
+  animation: fade-in 1000ms ease-in 1500ms forwards;
 }
 
 .artist-img.syzy {
   background-image: url("/artist-image-syzy.jpg");
+}
+
+.artist-box.rattrix {
   animation: fade-in 1000ms ease-in 1000ms forwards;
 }
 
 .artist-img.rattrix {
   background-image: url("/artist-image-rattrix.jpg");
-  animation: fade-in 1000ms ease-in 1500ms forwards;
+}
+
+.artist-box.trollphace {
+  animation: fade-in 1000ms ease-in 2000ms forwards;
 }
 
 .artist-img.trollphace {
   background-image: url("/artist-image-trollphace.jpg");
-  animation: fade-in 1000ms ease-in 2000ms forwards;
 }
 
 .artist-img {
@@ -52,89 +89,45 @@
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
-  opacity: 0;
   transform: scale(1);
-  transition: transform 300ms;
-}
-
-.artist-box:hover {
-    transform: scale(0.95);
-    transition: transform 300ms;
+  transition: transform 300ms, opacity 1000ms;
 }
 
 a.artist-img-link {
-  opacity: 0;
+  position: absolute;
   display: block;
   width: 100%;
   height: 100%;
-  transition: opacity 0.5s;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-a.artist-img-link.show-logo {
-  opacity: 0.7;
-}
-
-a.artist-img-link:hover {
-  opacity: 0.7;
+  transition: transform 300ms, opacity 1000ms;
+  opacity: 0;
 }
 
 a.artist-img-link.akeos {
   background-image: url("/akeos-logo.png");
   background-size: 80%;
-  background-position: center 25px;
 }
 
 a.artist-img-link.neonix {
   background-image: url("/neonix-logo.png");
-  mix-blend-mode: multiply;
-  background-size: 100%;
-  background-position: center -20px;
-}
-
-a.artist-img-link.neonix.show-logo {
-  opacity: 0.8;
-}
-
-a.artist-img-link.neonix:hover {
-  opacity: 0.8;
-}
-
-a.artist-img-link.syzy {
-  background-image: url("/syzy-logo.png");
-  background-size: 130%;
-}
-
-a.artist-img-link.syzy.show-logo {
-  opacity: 0.8;
+  background-size: 70%;
 }
 
 a.artist-img-link.rattrix {
   background-image: url("/rattrix-logo.png");
   background-size: 65%;
-  mix-blend-mode: multiply;
-  filter: invert(1);
 }
 
-a.artist-img-link.rattrix:hover {
-  opacity: 0.8;
+a.artist-img-link.syzy {
+  background-image: url("/syzy-logo.png");
+  background-size: 60%;
 }
 
 a.artist-img-link.trollphace {
   background-image: url("/trollphace-logo.png");
-  background-size: 75%;
-  background-position: center 100px;
-  mix-blend-mode: multiply;
-}
-
-a.artist-img-link.trollphace.show-logo {
-  opacity: 0.86;
-}
-
-a.artist-img-link.trollphace:hover {
-  opacity: 0.86;
+  background-size: 80%;
 }
 
 @media (max-width: 1790px) {
@@ -143,7 +136,6 @@ a.artist-img-link.trollphace:hover {
 
 @media (max-width: 1252px) {
   .content.artists { grid-template-columns: 100%; }
-  .content.artist-page { }
 }
 
 .content.artist-page {
@@ -273,8 +265,20 @@ a.artist-img-link.trollphace:hover {
   display: none;
 }
 
+.logo {
+    width: 430px;
+}
+
+@media (min-width: 950px) {
+    .artist-img.hover { transform: scale(0.95); opacity: 0.75; }
+}
+
+.artist-img.hover { opacity: 0.75; }
+a.artist-img-link.hover { transform: scale(0.85); opacity: 0.78; }
+
+
 @media (max-width: 950px) {
-  .artist-page-main-contain { grid-template-columns: 100%; row-gap: 30px; margin-top: 30px;}
+  .artist-page-main-contain { grid-template-columns: 100%; row-gap: 30px; }
   .hr { width: 100%; height: 1px; margin: 0 auto; }
   .hidden { display: block; }
   .artist-info { display: grid; row-gap: 30px; }

@@ -13,19 +13,19 @@ const LINKS = {
       "twitter": "https://twitter.com/Neonixdub",
       "facebook": "https://www.facebook.com/Neonixdub/",
     },
-    "syzy": {
-      "spotify": "https://spoti.fi/3gcE418",
-      "soundcloud": "https://soundcloud.com/syzymusic",
-      "instagram": "https://www.instagram.com/syzymusic/",
-      "twitter": "https://twitter.com/syzymusic",
-      "facebook": "https://bit.ly/2yjf86M",
-    },
     "rattrix": {
       "spotify": "https://spoti.fi/33btmkH",
       "soundcloud": "https://soundcloud.com/rattrix",
       "instagram": "https://www.instagram.com/rattrix/",
       "twitter": "https://twitter.com/Rattrix",
       "facebook": "https://www.facebook.com/Rattrix/",
+    },
+    "syzy": {
+      "spotify": "https://spoti.fi/3gcE418",
+      "soundcloud": "https://soundcloud.com/syzymusic",
+      "instagram": "https://www.instagram.com/syzymusic/",
+      "twitter": "https://twitter.com/syzymusic",
+      "facebook": "https://bit.ly/2yjf86M",
     },
     "trollphace": {
       "spotify": "https://spoti.fi/2yHCWxN",
@@ -39,8 +39,8 @@ const LINKS = {
 const MUSIC = {
     "akeos": "https://soundcloud.com/akeos/dermacrush",
     "neonix": "https://soundcloud.com/bassrush/neonix-dead-face",
-    "syzy": "https://soundcloud.com/syzymusic/sunshine",
     "rattrix": "https://soundcloud.com/rattrix/sets/organic-riddim-vip-out-now",
+    "syzy": "https://soundcloud.com/syzymusic/sunshine",
     "trollphace": "https://soundcloud.com/yogitrf/yogi-feat-pusha-t-burial-skrillex-trollphace-remix",
 }
 
@@ -69,16 +69,16 @@ const MEDIA = {
             new Source("/MEDIA/neonix1.mp4", 9, 17),
         ],
     },
-    "syzy": {
-        type: MEDIA_TYPE.IMAGE,
-        sources: [
-            new Source("/MEDIA/syzy1.jpg", null, null),
-        ],
-    },
     "rattrix": {
         type: MEDIA_TYPE.VIDEO,
         sources: [
             new Source("/MEDIA/rattrix1.mp4", 9, 17),
+        ],
+    },
+    "syzy": {
+        type: MEDIA_TYPE.IMAGE,
+        sources: [
+            new Source("/MEDIA/syzy1.jpg", null, null),
         ],
     },
     "trollphace": {

@@ -37,8 +37,6 @@ class ArtistPage extends Component {
   }
 
   render() {
-    let name = this.props.artistName.toUpperCase();
-
     let media = null;
     let source = MEDIA[this.props.artistName].sources[0];
     if (MEDIA[this.props.artistName].type === MEDIA_TYPE.VIDEO) {
@@ -67,7 +65,7 @@ class ArtistPage extends Component {
 
     return (
       <div className="content artist-page">
-        <div className="artist-name">{name}</div>
+        <img src={`/${this.props.artistName}-logo.png`} className="logo"/>
         <div className="artist-page-main-contain">
           {media}
           <div className="hr"/>
@@ -87,14 +85,46 @@ class ArtistPage extends Component {
 }
 
 class ArtistBox extends Component {
+  constructor(props) {
+      super(props);
+      this.mouseEnter = this.mouseEnter.bind(this);
+      this.mouseLeave = this.mouseLeave.bind(this);
+      this.state = { hover: false };
+  }
+
+  mouseEnter() {
+      this.setState({hover: true});
+  }
+
+  mouseLeave() {
+      this.setState({hover: false});
+  }
+
   render() {
     let cn = `artist-img ${this.props.artistName}`;
     let link = `/artists/${this.props.artistName}`;
     let logo = `artist-img-link ${this.props.artistName}`;
+    let n = `artist-name ${this.props.artistName}`;
+
+    if (this.state.hover) {
+        cn = cn + " hover";
+        logo = logo + " hover";
+        n = n + " hover";
+    }
 
     return (
-      <div className="artist-box">
-        <div className={cn}><Link className={logo} to={link}/></div>
+      <div className={`artist-box ${this.props.artistName}`}>
+        <div
+            className={`artist-box-animate ${this.props.artistName}`}
+            onMouseEnter={this.mouseEnter}
+            onMouseLeave={this.mouseLeave}
+        >
+            <div className={cn}>
+                <div className={n}>{this.props.artistName.toUpperCase()}</div>
+            </div>
+
+            <Link className={logo} to={link}/>
+        </div>
       </div>
     )
   }
@@ -103,7 +133,9 @@ class ArtistBox extends Component {
 class Artists extends Component {
   handleLogoFade(name) {
     let logo = document.getElementsByClassName(`artist-img-link ${name}`)[0];
-    if (!logo) { return; }
+    let img = document.getElementsByClassName(`artist-img ${name}`)[0];
+    let n = document.getElementsByClassName(`artist-name ${name}`)[0];
+    if (!logo || !img || !n) { return; }
 
     let rect = logo.getBoundingClientRect();
     let page = document.getElementById("root").getBoundingClientRect();
@@ -111,11 +143,15 @@ class Artists extends Component {
     let pageCenter = (-1 * page.y) + (window.innerHeight / 2);
     let rectCenter = (rect.y) + (rect.height / 2) + (-1 * page.y);
 
-    if (pageCenter >= rectCenter - 200 && pageCenter <= rectCenter + 240) {
-        logo.classList = `artist-img-link ${name} show-logo`;
+    if (pageCenter >= rectCenter - 160 && pageCenter <= rectCenter + 160) {
+        logo.classList = `artist-img-link ${name} hover`;
+        img.classList = `artist-img ${name} hover`;
+        n.classList = `artist-name ${name} hover`;
     }
     else {
         logo.classList = `artist-img-link ${name}`
+        img.classList = `artist-img ${name}`;
+        n.classList = `artist-name ${name}`;
     }
   }
 
@@ -134,7 +170,7 @@ class Artists extends Component {
   render() {
     let artists = [];
     for (const artist of ARTISTS) {
-      artists.push(<ArtistBox artistName={artist}/>)
+      artists.push(<ArtistBox key={`artist-box-${artist}`} artistName={artist}/>)
     }
     return (
       <div className="content artists">

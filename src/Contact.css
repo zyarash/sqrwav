@@ -3,9 +3,8 @@
     font-size: 14px;
     text-align: center;
     line-height: 1.8;
-    max-width: 800px;
-    display: flex;
-    flex-flow: column;
+    display: grid;
+    grid-auto-columns: 100%;
     max-width: 500px;
 }
 
@@ -37,6 +36,7 @@ textarea {
 
 input[type=submit] {
     width: 50%;
+    justify-self: center;
 }
 
 input[type=submit]:disabled {
