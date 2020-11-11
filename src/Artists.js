@@ -28,18 +28,35 @@ class ArtistPage extends Component {
     let source = MEDIA[this.props.artistName].sources[0];
     if (MEDIA[this.props.artistName].type === MEDIA_TYPE.VIDEO) {
         media = (
-            <div className="artist-page-img">
-                <video key={source.src} muted autoPlay loop>
-                  <source src={source.src} type="video/mp4"/>
-                </video>
+            <div className="artist-page-img-contain">
+                <div className="artist-page-img">
+                    <video key={source.src} muted autoPlay loop>
+                      <source src={source.src} type="video/mp4"/>
+                    </video>
+                    <div className={`artist-name page ${this.props.artistName}`}/>
+                </div>
+                <div className={`artist-media-credit ${this.props.artistName}`}>
+                    <div className={`photographer ${this.props.artistName}`}/>
+                    <div className={`location ${this.props.artistName}`}/>
+                </div>
             </div>
        )
     }
     else {
-      media = <div 
-        className={`artist-page-img ${this.props.artistName}`}
-        style={{backgroundImage: `url('${source.src}')`}}
-      />
+      media = (
+        <div className="artist-page-img-contain">
+            <div 
+            className={`artist-page-img ${this.props.artistName}`}
+            style={{backgroundImage: `url('${source.src}')`}}
+            >
+                <div className={`artist-name page ${this.props.artistName}`}/>
+            </div>
+            <div className={`artist-media-credit ${this.props.artistName}`}>
+                <div className={`photographer ${this.props.artistName}`}/>
+                <div className={`location ${this.props.artistName}`}/>
+            </div>
+        </div>
+        )
     }
 
     let socials = []
@@ -52,7 +69,6 @@ class ArtistPage extends Component {
 
     return (
       <div className="content artist-page">
-        <img src={`/${this.props.artistName}-logo.png`} className="logo"/>
         <div className="artist-page-main-contain">
           {media}
           <div className="hr"/>

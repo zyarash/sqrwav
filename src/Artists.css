@@ -169,6 +169,13 @@ a.artist-img-link.trollphace {
   column-gap: 20px;
 }
 
+.artist-page-img-contain {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .artist-page-img {
   width: 400px;
   height: 400px;
@@ -255,7 +262,7 @@ a.artist-img-link.trollphace {
   height: 70px;
   margin: 0 auto;
   cursor: pointer;
-  fill: #555;
+  fill: #777;
   transition: fill 0.5s;
 }
 
@@ -291,7 +298,90 @@ a.artist-img-link.trollphace {
 .artist-img.hover { opacity: 0.75; }
 a.artist-img-link.hover { transform: scale(0.85); opacity: 0.78; }
 
+.artist-name.page {
+  background: rgba(255, 255, 255, 0.5);
+  background-repeat: no-repeat;
+  filter: invert(1);
+  background-position: center;
+}
 
+.artist-name.page.akeos {
+    background-image: url("/akeos-logo.png");
+    background-size: 80%;
+}
+
+.artist-name.page.neonix {
+    background-image: url("/neonix-logo.png");
+    background-size: 80%;
+}
+
+.artist-name.page.rattrix {
+    background-image: url("/rattrix-logo.png");
+    background-size: 80%;
+}
+
+.artist-name.page.syzy {
+    background-image: url("/syzy-logo.png");
+    background-size: 80%;
+}
+
+.artist-name.page.trollphace {
+    background-image: url("/trollphace-logo.png");
+    background-size: 80%;
+}
+
+.artist-media-credit {
+    display: flex; 
+    font-weight: 600;
+    bottom: 0;
+    right: 0;
+    letter-spacing: 1px;
+    font-size: 10px;
+    color: #bbb;
+    padding: 2px 0px;
+}
+
+.photographer {
+    position: absolute;
+    right: 0;
+}
+
+.location {
+    position: absolute;
+    left: 0;
+}
+
+.photographer.akeos:after {
+    content: "Taken by @shloaded, 2020";
+}
+
+.location.akeos:after {
+    content: "Los Angelas";
+}
+
+.photographer.neonix:after {
+    content: "Taken by @khangarooo, 2020";
+}
+
+.location.neonix:after {
+    content: "San Jose";
+}
+
+.photographer.syzy:after {
+    content: "Taken by @spawnzone, 2020";
+}
+
+.location.syzy:after {
+    content: "Los Angelas";
+}
+
+.photographer.rattrix:after {
+    content: "Taken by @bananacamphoto, 2020";
+}
+
+.location.rattrix:after {
+    content: "Vancouver";
+}
 
 @media (max-width: 950px) {
   .artist-social { width: 60px; height: 60px }

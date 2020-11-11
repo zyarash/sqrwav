@@ -64,8 +64,8 @@ a.active {
 
 #root {
     display: flex;
-    height: 100%;
     flex-flow: column;
+    height: 100%;
 }
 
 footer {
