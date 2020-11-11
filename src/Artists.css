@@ -386,6 +386,7 @@ a.artist-img-link.hover { transform: scale(0.85); opacity: 0.78; }
 @media (max-width: 950px) {
   .artist-social { width: 60px; height: 60px }
   .artist-page-main-contain { grid-template-columns: 100%; row-gap: 30px; }
+  .artist-page-img-contain { width: 100%; }
   .hr { width: 100%; height: 1px; margin: 0 auto; }
   .hidden { display: block; }
   .artist-info { display: grid; row-gap: 30px; }
