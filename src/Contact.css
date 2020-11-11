@@ -41,6 +41,7 @@ textarea {
 input[type=submit] {
     width: 50%;
     justify-self: center;
+    font-size: 12px;
 }
 
 input[type=submit]:disabled {
@@ -57,6 +58,9 @@ label {
 
 label > p {
     align-self: flex-start;
+    font-size: 12px;
+    font-weight: 200;
+    letter-spacing: 1px;
 }
 
 p.error {
