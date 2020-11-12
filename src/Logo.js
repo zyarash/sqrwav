@@ -35,10 +35,15 @@ class Logo extends Component {
   }
 
   render() {
+    let w = document.body.clientWidth;
+    if (w > 430) {
+        w = 430;
+    }
+
     return (
       <div style={{fontFamily: "LOGOFONT"}}>
         <img alt="" className="lazyLoad"/>
-        <canvas width={document.body.clientWidth} height={200}/>
+        <canvas width={w} height={200}/>
       </div>
     )
   }

@@ -100,8 +100,8 @@ header {
 .social-media-icon {
     opacity: 0.5;
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 10px;
@@ -194,4 +194,14 @@ header {
     .artists.content-container { height: auto; }
     .artist.content-container { height: auto; }
     .artists.fade-enter-done { height: auto; }
+}
+
+@media (max-width: 1240px) {
+    .content.about { width: 430px; }
+    .content.contact { width: 430px; }
+}
+
+@media (max-width: 600px) {
+    .content.about { width: 100%; }
+    .content.contact { width: 100%; }
 }

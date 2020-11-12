@@ -10,8 +10,13 @@ class BaseSVGComponent extends Component {
   }
 
   render() {
+    let cls = CLSNAME(this.name);
+    if (this.props.top) {
+        cls = cls + " top";
+    }
+
     return (
-      <svg width={L} height={L} viewBox={VIEWBOX} onClick={this.handleClick.bind(this)} className={CLSNAME(this.name)}>
+      <svg width={L} height={L} viewBox={VIEWBOX} onClick={this.handleClick.bind(this)} className={cls}>
         {this.innerPath}
       </svg>
     )
@@ -25,25 +30,23 @@ class InstagramSVG extends BaseSVGComponent {
   }
 
   render() {
+    let cls = CLSNAME(this.name);
+    if (this.props.top) {
+        cls = cls + " top";
+    }
+
     return (
-      <svg width={L} height={L} viewBox={VIEWBOX} onClick={this.handleClick.bind(this)} className={CLSNAME(this.name)}>
+      <svg width={L} height={L} viewBox={VIEWBOX} onClick={this.handleClick.bind(this)} className={cls}>
         <path className="instagram-path-colored" xmlns="http://www.w3.org/2000/svg" d="M18 6.615v1.45c0 .34-.275.616-.616.616h-1.449c-.341 0-.615-.276-.615-.616v-1.45c0-.34.274-.615.615-.615h1.449c.341 0 .616.275.616.615zm-1.131 4.699c.033.225.054.453.054.686 0 2.72-2.204 4.923-4.922 4.923s-4.923-2.204-4.923-4.923c0-.233.021-.461.054-.686.031-.221.075-.437.134-.647h-1.266v6.719c0 .339.275.614.616.614h10.769c.34 0 .615-.275.615-.615v-6.719h-1.265c.058.211.102.427.134.648zm-4.869 3.763c1.699 0 3.078-1.378 3.078-3.077s-1.379-3.077-3.078-3.077-3.077 1.377-3.077 3.077 1.378 3.077 3.077 3.077zm12-15.077v24h-24v-24h24zm-4 5.846c0-1.019-.826-1.846-1.846-1.846h-12.308c-1.019 0-1.846.827-1.846 1.846v12.307c0 1.02.827 1.847 1.846 1.847h12.309c1.019 0 1.845-.827 1.845-1.847v-12.307z"/>
         <path className="instagram-path" xmlns="http://www.w3.org/2000/svg" d="M18 6.615v1.45c0 .34-.275.616-.616.616h-1.449c-.341 0-.615-.276-.615-.616v-1.45c0-.34.274-.615.615-.615h1.449c.341 0 .616.275.616.615zm-1.131 4.699c.033.225.054.453.054.686 0 2.72-2.204 4.923-4.922 4.923s-4.923-2.204-4.923-4.923c0-.233.021-.461.054-.686.031-.221.075-.437.134-.647h-1.266v6.719c0 .339.275.614.616.614h10.769c.34 0 .615-.275.615-.615v-6.719h-1.265c.058.211.102.427.134.648zm-4.869 3.763c1.699 0 3.078-1.378 3.078-3.077s-1.379-3.077-3.078-3.077-3.077 1.377-3.077 3.077 1.378 3.077 3.077 3.077zm12-15.077v24h-24v-24h24zm-4 5.846c0-1.019-.826-1.846-1.846-1.846h-12.308c-1.019 0-1.846.827-1.846 1.846v12.307c0 1.02.827 1.847 1.846 1.847h12.309c1.019 0 1.845-.827 1.845-1.847v-12.307z"/>
         <rect className="instagram-path-hover" width="100%" height="100%" fillOpacity="0"/>
         <defs>
-          <radialGradient id="instagram" cx="50%" cy="50%" r="110%" fx="20%" fy="110%">
-            <stop offset="0%" stopColor="#555"/>
-            <stop offset="5%" stopColor="#555" />
-            <stop offset="45%" stopColor="#555"/>
-            <stop offset="60%" stopColor="#555"/>
-            <stop offset="85%" stopColor="#555"/>
-          </radialGradient>
-          <radialGradient id="instagram-color" cx="50%" cy="50%" r="110%" fx="20%" fy="110%">
-            <stop offset="0%" stopColor="red"/>
-            <stop offset="5%" stopColor="blue" />
-            <stop offset="45%" stopColor="green"/>
-            <stop offset="60%" stopColor="yellow"/>
-            <stop offset="85%" stopColor="#555"/>
+          <radialGradient id="instagram-color" cx="50%" cy="50%" r="140%" fx="20%" fy="110%">
+            <stop offset="0%" stopColor="#feda75"/>
+            <stop offset="22%" stopColor="#fa7e11" />
+            <stop offset="45%" stopColor="#d62976"/>
+            <stop offset="60%" stopColor="#962fbf"/>
+            <stop offset="85%" stopColor="#4f5bd5"/>
           </radialGradient>
         </defs>
       </svg>

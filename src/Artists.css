@@ -144,14 +144,6 @@ a.artist-img-link.trollphace {
   background-size: 80%;
 }
 
-@media (max-width: 1790px) {
-  .content.artist { grid-template-columns: 35% 35%; }
-}
-
-@media (max-width: 1252px) {
-  .content.artists { grid-template-columns: 100%; }
-}
-
 .content.artist-page {
   display: flex;
   flex-direction: column;
@@ -215,55 +207,41 @@ a.artist-img-link.trollphace {
   width: 100%;
 }
 
-.spotify-artist-social:hover {
+.spotify-artist-social {
   fill: #1db954;
 }
 
-.soundcloud-artist-social:hover {
+.soundcloud-artist-social {
   fill: #fe5000;
 }
 
-.instagram-path {
-  fill: url("#instagram");
-}
-
-.instagram-path-colored {
-  fill: url("#instagram-color");
-}
-
-.instagram-path-hover {
-  z-index: 1;
-  transition: z-index 0s;
-}
-
-.instagram-path-hover {
-  z-index: -5;
-}
-
-.instagram-path-hover ~ .instagram-path {
-  transition: opacity 0.5s;
-}
-
-.instagram-path-hover:hover ~ .instagram-path {
-  z-index: 1;
-  opacity: 0;
-}
-
-.twitter-artist-social:hover {
+.twitter-artist-social {
   fill: #1da1f2;
 }
 
-.facebook-artist-social:hover {
+.facebook-artist-social {
   fill: #3b5998;
 }
 
+.instagram-artist-social {
+  fill: url("#instagram-color");
+}
+
 .artist-social {
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   margin: 0 auto;
   cursor: pointer;
+  position: absolute;
+}
+
+.artist-social.top {
   fill: #777;
-  transition: fill 0.5s;
+  transition: opacity 300ms;
+}
+
+.artist-social.top:hover {
+  opacity: 0;
 }
 
 .artist-info-socials {
@@ -274,6 +252,14 @@ a.artist-img-link.trollphace {
   justify-content: center;
   align-items: center;
   place-content: space-between;
+}
+
+.artist-info-social {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
 }
 
 .artist-header {
@@ -383,23 +369,43 @@ a.artist-img-link.hover { transform: scale(0.85); opacity: 0.78; }
     content: "Vancouver";
 }
 
-@media (max-width: 950px) {
-  .artist-social { width: 60px; height: 60px }
-  .artist-page-main-contain { grid-template-columns: 100%; row-gap: 30px; }
-  .artist-page-img-contain { width: 100%; }
+@media (max-width: 1380px) {
+  .content.artists { grid-template-columns: 35% 35%; }
+}
+
+@media (max-width: 1240px) {
+  .artist-page-main-contain { grid-template-columns: 100%; row-gap: 30px; width: 430px; }
   .hr { width: 100%; height: 1px; margin: 0 auto; }
+  .artist-social { width: 60px; height: 60px; }
+  .artist-info-social { width: 60px; height: 60px; }
+  .artist-name.page { opacity: 1; height: 45px; }
+  .artist-page-img-contain { width: 100%; display: flex; align-content: center; justify-content: center;  height: auto; }
+  .artist-media-credit { position: absolute; width: 100%; padding: 0; }
+  .artist-page-img { width: 100%; width: 430px; height: 430px; }
   .hidden { display: block; }
   .artist-info { display: grid; row-gap: 30px; }
-  .artist-page-img { width: 100%; }
   .artist-info-socials { height: auto; }
-  a.artist-img-link.akeos { background-position: center; }
-  a.artist-img-link.neonix { background-position: center; }
-  a.artist-img-link.syzy { background-position: center; }
-  a.artist-img-link.ratrix { background-position: center; }
-  a.artist-img-link.trollphace { background-position: center; }
-  .artist-name { opacity: 0; height: 0; transition: opacity 300ms, height 300ms; }
+  .artists.content-container { height: auto; }
+  .artist.content-container { height: auto; }
+  .artist-page-img.syzy { height: 500px; background-position: 50% 30%; }
+  .artist-page-img.trollphace { height: 500px; background-position: 50% 70%; }
+  .content.artists { grid-template-columns: 100%; width: 430px; }
+}
+
+@media (max-width: 950px) {
   .artist-name.hover { opacity: 1; height: 45px; }
   .artist-name-animate { transition: none; }
   .artist-name-animate.hover { transform: scale(1); }
   .logo { width: 100% }
+}
+
+@media (max-width: 600px) {
+    .artist-name { opacity: 0; height: 0; transition: opacity 300ms, height 300ms; }
+    .content.artists { width: 100%; }
+    .artist-page-main-contain { width: 100%; }
+    .artist-page-img { width: 100vw; height: 100vw; }
+    .artist-page-img.syzy { height: 500px; background-position: center; }
+    .artist-page-img.trollphace { height: 500px; background-position: center; }
+    .artist-page-img > video { max-width: revert; left: revert; left: -50%; position: absolute; }
+    .artist-page-img-contain { width: 100%; height: auto; }
 }

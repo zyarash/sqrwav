@@ -62,7 +62,12 @@ class ArtistPage extends Component {
     let socials = []
     for (const [social, link] of Object.entries(LINKS[this.props.artistName])) {
       const Component = this.components[social];
-      socials.push(<Component key={`artist-social-${this.props.artistName}-${social}`} link={link}/>);
+      socials.push(
+          <div className="artist-info-social">
+              <Component key={`artist-social-${this.props.artistName}-${social}`} link={link}/>
+              <Component key={`artist-social-${this.props.artistName}-${social}`} link={link} top={true}/>
+          </div>
+      );
     }
 
     let s = `https://w.soundcloud.com/player/?url=${MUSIC[this.props.artistName]}&color=%23555555&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=true&show_teaser=true&visual=true%22%3E`;
