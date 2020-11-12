@@ -11,7 +11,7 @@ class About extends Component {
     return (
       <div className="content about">
         Square Wave Management is an artist management company founded by Keith Stewart aka "Sub Antix"
-        primarily focused on representing and promoting electronic music producers.<br/><br/><br/>Follow us on social media links below or contact us for any 
+        primarily focused on <br/> representing and promoting electronic <br/>music producers.<br/><br/><br/>Follow us on social media links below or contact us for any 
         questions or information.
       </div>
     )

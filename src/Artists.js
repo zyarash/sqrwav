@@ -30,7 +30,7 @@ class ArtistPage extends Component {
         media = (
             <div className="artist-page-img-contain">
                 <div className="artist-page-img">
-                    <video key={source.src} muted autoPlay loop playsinline>
+                    <video key={source.src} muted autoPlay loop playsInline>
                       <source src={source.src} type="video/mp4"/>
                     </video>
                     <div className={`artist-name page ${this.props.artistName}`}/>
