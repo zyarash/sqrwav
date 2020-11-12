@@ -75,7 +75,7 @@ class App extends Component {
         return (
             <BrowserRouter onChange={test}>
             <Route onChange={test} render={({ location }) => (
-                <div id="rootroot">
+                <React.Fragment>
                     <header>
                         <Logo/>
                         <nav className="home">
@@ -108,7 +108,7 @@ class App extends Component {
                         </div>
                         <div>The official website of Square Wave Artist Management | all content © Square Wave Artist Management 2020</div>
                     </footer>
-                </div>
+                </React.Fragment>
             )} />
             </BrowserRouter>
         )
