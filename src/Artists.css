@@ -342,7 +342,7 @@ a.artist-img-link.hover { transform: scale(0.85); opacity: 0.78; }
 }
 
 .location.akeos:after {
-    content: "Los Angelas";
+    content: "Los Angeles";
 }
 
 .photographer.neonix:after {
@@ -358,7 +358,7 @@ a.artist-img-link.hover { transform: scale(0.85); opacity: 0.78; }
 }
 
 .location.syzy:after {
-    content: "Los Angelas";
+    content: "Los Angeles";
 }
 
 .photographer.rattrix:after {
